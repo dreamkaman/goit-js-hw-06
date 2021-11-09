@@ -12,3 +12,24 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const listOfImages = images.map(({ url, alt }) => {
+  let elementListItem = document.createElement('li');
+  let elementImage = document.createElement('img');
+
+  elementImage.src = url;
+  elementImage.alt = alt;
+
+  console.log(elementListItem);
+  console.log(elementImage);
+
+  console.log(elementListItem.insertAdjacentHTML(beforeend, elementImage));
+
+return ;
+
+}
+);
+
+console.log(listOfImages);
+
