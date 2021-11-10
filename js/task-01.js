@@ -15,11 +15,14 @@ let categoryItemsCount;
 for (let category of categories) {
 
     categoryName = category.firstElementChild.textContent;
+
     categoryItemsCount = category.querySelectorAll('li').length;
-    
+
     console.log(`Category: ${categoryName}`);   
 
     console.log(`Elements: ${categoryItemsCount}`);
 
 };
+
+
 

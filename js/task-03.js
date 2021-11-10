@@ -13,23 +13,20 @@ const images = [
   },
 ];
 
+const elementUl = document.querySelector('.gallery');
 
-const listOfImages = images.map(({ url, alt }) => {
-  let elementListItem = document.createElement('li');
-  let elementImage = document.createElement('img');
+const markup = images.map(({ url, alt }) => {
+  //let elementListItem = document.createElement('li');
+  //let elementImage = document.createElement('img');
 
-  elementImage.src = url;
-  elementImage.alt = alt;
-
-  console.log(elementListItem);
-  console.log(elementImage);
-
-  console.log(elementListItem.insertAdjacentHTML(beforeend, elementImage));
-
-return ;
+ return `<li style=""><img src="${url}" alt="${alt}" height="200px"></li>`;
 
 }
-);
+).join('');
 
-console.log(listOfImages);
+console.log(markup);
+
+elementUl.insertAdjacentHTML("beforeend", markup);
+
+
 
