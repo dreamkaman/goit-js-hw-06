@@ -1,12 +1,29 @@
-const btnLogin = document.querySelector('button[type="submit"]');
+const form = document.querySelector('.login-form')
 
-const input
+form.addEventListener("submit", handleSubmit);
 
-console.log(btnLogin);
+function handleSubmit(event) {
 
-const onBtnLoginSubmit = function () {
+    event.preventDefault();
     
+  const { elements: { email, password } } = event.currentTarget;
+
+    if (email.value && password.value) {
+
+        const objForSubmit = { email: email.value, password: password.value };
+
+        console.log(objForSubmit);
+    
+        event.currentTarget.reset();
+    
+    } else {
+
+        return alert("Все поля должны быть заполнены")
+    };
+ 
 };
 
-btnSubmit.addEventListener('submit', onBtnLoginSubmit);
+
+
+
 
