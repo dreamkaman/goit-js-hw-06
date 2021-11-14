@@ -11,6 +11,7 @@ const btnCreate = document.querySelector('button[data-create]');
 
 const btnDestroy = document.querySelector('button[data-destroy]');
 
+let currentCount = 30;
 
 const onBtnCreateClick = function () {
 
@@ -20,20 +21,24 @@ const onBtnCreateClick = function () {
 
   const divArr = [];
 
-  for (let i = 0; i <= Number(myCount) - 1; i += 1) {
+  for (let i = 1; i <= Number(myCount); i += 1) {
+
+    divArr.push(`<div style="width: ${currentCount}px; height: ${currentCount}px; background-color: ${getRandomHexColor()};"></div>`);
     
-    divArr.push(`<div style="width: ${30+i*10}px; height: ${30+i*10}px; background-color: ${getRandomHexColor()};"></div>`);
+    currentCount = currentCount + 10;
   }
 
   const markup = divArr.join('');
 
-  divBoxesEl.insertAdjacentHTML("afterbegin", markup);
+  divBoxesEl.insertAdjacentHTML("beforeend", markup);
 
 };
 
 const onBtnDestroyClick = function () {
 
   divBoxesEl.innerHTML = "";
+
+  currentCount = 30;
 
 };
 

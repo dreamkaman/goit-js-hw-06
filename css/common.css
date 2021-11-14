@@ -33,7 +33,7 @@ li:not(:last-child) {
   margin-right: 10px;
 }
 
-/* .validation-input {
+.validation-input {
   border: 3px solid #bdbdbd;
 }
 
@@ -43,4 +43,4 @@ li:not(:last-child) {
 
 .validation-input.invalid {
   border-color: #f44336;
-} */ ;
+}
